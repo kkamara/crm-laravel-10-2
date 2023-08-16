@@ -2,9 +2,9 @@
 
 <img src="https://github.com/kkamara/useful/raw/main/movies.png" alt="movies.png" width=""/>
 
-# users-api-laravel-10-php-app-5 [![API](https://github.com/kkamara/users-api-laravel-10-php-app-5/actions/workflows/build.yml/badge.svg)](https://github.com/kkamara/users-api-laravel-10-php-app-5/actions/workflows/build.yml)
+# crm-laravel-10[![API](https://github.com/kkamara/users-api-laravel-10-php-app-5/actions/workflows/build.yml/badge.svg)](https://github.com/kkamara/users-api-laravel-10-php-app-5/actions/workflows/build.yml)
 
-(Test Driven Development) (05-Aug-2023) With Laravel 10 we build a GDPR compliant users API system. I have been working with Laravel since Laravel 5.4 - www.endoflife.date/laravel
+(16-Aug-2023) This app is a remake of the Laravel 5 crm which is a remake of the [barebones CRM](https://github.com/kkamara/crm). Built with Laravel 5.10.
 
 * [Tinker](#tinker)
 
