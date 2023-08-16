@@ -1,10 +1,10 @@
-name: API
+name: Tests Pipeline
 on: [push, pull_request]
 env:
     PHPUNIT_FLAGS: "--testsuite=Feature --stop-on-failure"
 jobs:
   laravel:
-    name: pipeline (PHP ${{ matrix.php-versions }})
+    name: Tests Pipeline (PHP ${{ matrix.php-versions }})
     runs-on: ubuntu-latest
     services:
       mysql:
