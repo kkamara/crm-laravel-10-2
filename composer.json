@@ -1,7 +1,7 @@
 {
     "name": "kkamara/crm-laravel-10",
     "type": "project",
-    "description": "(16-Aug-2023) This app is a remake of the Laravel 5 crm which is a remake of the [barebones CRM](https://github.com/kkamara/crm). Built with Laravel 5.10.",
+    "description": "(16-Aug-2023) This app is a remake of the Laravel 5 crm which is a remake of the [barebones CRM](https://github.com/kkamara/crm). Built with Laravel 10.",
     "keywords": [
         "testing",
         "web",
