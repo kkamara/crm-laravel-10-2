@@ -1,7 +1,5 @@
-import './bootstrap';
+require('./bootstrap');
 
-import Alpine from 'alpinejs';
+require('./navbar')
 
-window.Alpine = Alpine;
-
-Alpine.start();
+require('./script');
