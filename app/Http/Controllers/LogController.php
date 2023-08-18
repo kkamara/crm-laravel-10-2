@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Validator;
-use App\User;
-use App\Log;
+use App\Models\User;
+use App\Models\Log;
 
 class LogController extends Controller
 {
@@ -91,7 +91,7 @@ class LogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Log  $log
+     * @param  \App\Models\Log  $log
      * @return \Illuminate\Http\Response
      */
     public function show($logSlug)
@@ -126,7 +126,7 @@ class LogController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Log  $log
+     * @param  \App\Models\Log  $log
      * @return \Illuminate\Http\Response
      */
     public function edit($logSlug)
@@ -164,7 +164,7 @@ class LogController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Log  $log
+     * @param  \App\Models\Log  $log
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $logSlug)

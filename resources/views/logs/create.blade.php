@@ -25,7 +25,7 @@
                         <select class="form-control" name='client_id' id='clientId'>
 
                             <option value='0'>Please select a client</option>
-                            @forelse(\App\Client::getAccessibleClients(auth()->user())
+                            @forelse(\App\Models\Client::getAccessibleClients(auth()->user())
                                 ->orderBy('company', 'ASC')
                                 ->get() as $client)
                                 <option value='{{ $client->id }}'>
