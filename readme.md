@@ -2,6 +2,10 @@
 
 <img src="https://github.com/kkamara/useful/raw/main/movies.png" alt="movies.png" width=""/>
 
+![crm.png](https://github.com/kkamara/useful/raw/main/crm.png)
+
+![crm2.png](https://github.com/kkamara/useful/raw/main/crm2.png)
+
 # crm-laravel-10[![API](https://github.com/kkamara/users-api-laravel-10-php-app-5/actions/workflows/build.yml/badge.svg)](https://github.com/kkamara/users-api-laravel-10-php-app-5/actions/workflows/build.yml)
 
 (16-Aug-2023) This app is a remake of the Laravel 5 crm (2016) which is a remake of the [barebones CRM](https://github.com/kkamara/crm). Built with Laravel 10.
