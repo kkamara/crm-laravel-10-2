@@ -262,16 +262,17 @@ class Client extends Model
     /**
      * Create db instance of this model
      *
+     * @param   \Illuminate\Http\Request $request
      *  @param  array $data
      *  @param  \App\Models\User $user
      *  @return \App\Models\Client
      */
-    public function createClient($data, $user)
+    public function createClient($request, $data, $user)
     {
         // get image name
-        if(Input::hasFile('image'))
+        if($request->hasFile('image'))
         {
-            $file = Input::file('image');
+            $file = $request->file('image');
             $imageName = $file->getClientOriginalName();
         }
 
@@ -364,7 +365,7 @@ class Client extends Model
      *
      *  @param \Illuminate\Http\Request $request
      *  @param array $data
-     *  @return array
+     *  @return \Illuminate\Support\MessageBag
      */
     public static function getUpdateErrors($request, $data)
     {

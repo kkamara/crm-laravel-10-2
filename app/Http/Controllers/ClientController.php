@@ -101,7 +101,11 @@ class ClientController extends Controller
             ]);
         }
 
-        $client = (new Client)->createClient($data, $user);
+        $client = (new Client)->createClient(
+            $request,
+            $data,
+            $user
+        );
 
         return redirect($client->path);
     }
