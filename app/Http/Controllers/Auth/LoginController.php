@@ -21,13 +21,6 @@ class LoginController extends Controller
     |
     */
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/dashboard';
-
     protected User|null $user;
 
     /** @var array to store seeder logins for site users */
