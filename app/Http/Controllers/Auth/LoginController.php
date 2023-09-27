@@ -28,6 +28,8 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/dashboard';
 
+    protected User|null $user;
+
     /** @var array to store seeder logins for site users */
     protected $loginEmails = array(
         array(
@@ -74,14 +76,12 @@ class LoginController extends Controller
             return back()->with('errors', ['Missing email and password.']);
         }
 
-        if(!$user = DB::select('select distinct * from users where email = ?', [$email]))
+        if(!$this->user = User::where("email", $email)->first())
         {
             return back()->with('errors', ['Invalid login credentials provided.']);
         }
 
-        $user = $user[0];
-
-        if(!Auth::attempt(['email' => $user->email, 
+        if(!Auth::attempt(['email' => $this->user->email, 
             'password' => request('password')], 
             (int) request('remember_me')))
         {
@@ -94,7 +94,10 @@ class LoginController extends Controller
 
         return redirect()
                 ->route('Dashboard')
-                ->with('flashSuccess', 'You have logged in, '.$user->first_name.' '.$user->last_name.'!');        
+                ->with(
+                    'flashSuccess', 
+                    'You have logged in, '.$this->user->first_name.' '.$this->user->last_name.'!'
+                );
     }
 
     public function logout()
