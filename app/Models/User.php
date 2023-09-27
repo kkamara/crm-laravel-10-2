@@ -92,7 +92,7 @@ class User extends Authenticatable implements PortableContract
     /**
      * Get clients that belong to an instance of this model.
      * 
-     * @return  Illuminate\Support\Facades\DB
+     * @return  \Illuminate\Support\Collection
      */
     public function getUserClients()
     {
@@ -107,7 +107,7 @@ class User extends Authenticatable implements PortableContract
     /**
      * Gets a list of users that are also assigned to clients that are linked to an instance of this model.
      * 
-     * @return Illuminate\Support\Collection
+     * @return \Illuminate\Support\Collection
      */
     public function getClientUsers()
     {
@@ -144,7 +144,7 @@ class User extends Authenticatable implements PortableContract
     /**
      * Returns a list of clients assigned to an instance of this model.
      * 
-     * @return  Illuminate\Support\Collection
+     * @return  \Illuminate\Support\Collection
      */
     public function getClientsAssigned()
     {
