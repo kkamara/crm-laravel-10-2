@@ -14,16 +14,13 @@ use Soved\Laravel\Gdpr\Retentionable;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\MessageBag;
-use Carbon\Carbon;
 use Validator;
 
 class User extends Authenticatable implements PortableContract
 {
     use HasApiTokens, HasFactory, Notifiable, Portable; 
     use EncryptsAttributes, Retentionable;
-
-    /** This model uses the HasRoles trait for a user being able to have a role. */
-    use HasRoles;
+    use HasRoles, UserAttributes;
 
     /**
      * The attributes that should be visible in the downloadable data.
@@ -90,41 +87,6 @@ class User extends Authenticatable implements PortableContract
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-
-    /**
-     * Set a publicily accessible identifier to get the path for this unique instance.
-     * 
-     * @return  string
-     */
-    public function getPathAttribute()
-    {
-        return url('/').'/users/'.$this->id;
-    }
-
-    /**
-     * Set a publicily accessible identifier to get the last login for this unique instance.
-     * 
-     * @return  string
-     */
-    public function getLastLoginAttribute()
-    {
-        if(empty($this->attributes['last_login']))
-        {
-            return '';
-        }
-
-        return Carbon::parse($this->attributes['last_login'])->diffForHumans();
-    }
-
-    /**
-     * Set a publicily accessible identifier to get the name for this unique instance.
-     * 
-     * @return  string
-     */
-    public function getNameAttribute()
-    {
-        return $this->attributes['first_name'] . ' ' . $this->attributes['last_name'];
-    }
 
     /**
      * Get clients that belong to an instance of this model.
