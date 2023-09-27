@@ -7,7 +7,7 @@ trait LogRelations
     /**
      * This model relationship belongs to \App\Models\User.
      * 
-     * @return  \Illuminate\Database\Eloquent\Model
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user()
     {
@@ -17,7 +17,7 @@ trait LogRelations
     /**
      * This model relationship belongs to \App\Models\User.
      * 
-     * @return  \Illuminate\Database\Eloquent\Model
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function userUpdated()
     {
@@ -27,7 +27,7 @@ trait LogRelations
     /**
      * This model relationship belongs to \App\Models\Client.
      * 
-     * @return  \Illuminate\Database\Eloquent\Model
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function client()
     {
