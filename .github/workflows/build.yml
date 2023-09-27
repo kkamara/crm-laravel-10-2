@@ -11,7 +11,7 @@ jobs:
         image: mysql:5.7
         env:
           MYSQL_ROOT_PASSWORD: 'secret'
-          MYSQL_DATABASE: 'crm_laravel_10'
+          MYSQL_DATABASE: 'crm_laravel_10_2'
           MYSQL_USER: 'user'
           MYSQL_PASSWORD: 'secret'
         ports:
