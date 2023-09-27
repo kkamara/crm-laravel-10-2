@@ -184,11 +184,12 @@ class Client extends Model
     /**
      *  Get store errors
      *
+     *  @param  \Illuminate\Http\Request $request
      *  @param  array $data
      *  @param  \App\Models\User $user
      *  @return \Illuminate\Support\MessageBag
      */
-    public static function getStoreErrors($data, $user)
+    public static function getStoreErrors($request, $data, $user)
     {
         $errors = new MessageBag;
 
@@ -213,11 +214,11 @@ class Client extends Model
             {
                 $errors->add("client_users", "No client selected");
             }
-        }   
+        }
 
-        if(Input::hasFile('image'))
+        if($request->hasFile('image'))
         {
-            $file = Input::file('image');
+            $file = $request->file('image');
             $mimetype = $file->getClientMimeType();
 
             switch($mimetype)

@@ -72,7 +72,11 @@ class ClientController extends Controller
         }
 
         $raw = Client::getStoreData($request);
-        $errors = Client::getStoreErrors($raw, $user);
+        $errors = Client::getStoreErrors(
+            $request,
+            $raw,
+            $user
+        );
 
         // handle errors
         if(!$errors->isEmpty())
