@@ -225,7 +225,7 @@ class ClientController extends Controller
 
         $data = Client::cleanUpdateData($raw);
 
-        $client = $client->updateClient($data, $user);
+        $client = $client->updateClient($request, $data, $user);
 
         return redirect()->route('showClient', $client->slug);
     }

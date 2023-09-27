@@ -88,15 +88,16 @@ class Client extends Model
     /**
      * Update db instance of this model.
      * 
+     * @param  \Illuminate\Http\Request $request
      * @param  array $data
      * @param  \App\Models\User $user 
      * @return Client 
      */
-    public function updateClient($data, $user)
+    public function updateClient($request, $data, $user)
     {
-        if(Input::hasFile('image'))
+        if($request->hasFile('image'))
         {
-            $file = Input::file('image');
+            $file = $request->file('image');
             $imageName = $file->getClientOriginalName();
         }
 
