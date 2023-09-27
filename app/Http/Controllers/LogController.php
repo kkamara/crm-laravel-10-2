@@ -18,7 +18,7 @@ class LogController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
      */
     public function index(Request $request)
     {
@@ -40,7 +40,7 @@ class LogController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
      */
     public function create()
     {
@@ -58,7 +58,7 @@ class LogController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -92,7 +92,7 @@ class LogController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Log  $log
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
      */
     public function show($logSlug)
     {
@@ -127,7 +127,7 @@ class LogController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Log  $log
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
      */
     public function edit($logSlug)
     {
@@ -165,7 +165,7 @@ class LogController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Log  $log
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $logSlug)
     {
