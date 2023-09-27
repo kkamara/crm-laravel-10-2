@@ -262,7 +262,7 @@ class Client extends Model
     /**
      * Create db instance of this model
      *
-     * @param   \Illuminate\Http\Request $request
+     *  @param  \Illuminate\Http\Request $request
      *  @param  array $data
      *  @param  \App\Models\User $user
      *  @return \App\Models\Client
