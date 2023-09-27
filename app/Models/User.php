@@ -14,6 +14,7 @@ use Soved\Laravel\Gdpr\Retentionable;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\MessageBag;
+use Illuminate\Support\Str;
 use Validator;
 
 class User extends Authenticatable implements PortableContract
@@ -347,7 +348,7 @@ class User extends Authenticatable implements PortableContract
      */
     public function createUser($data, $user)
     {
-        $data['username'] = str_slug($data['first_name'].' '.$data['last_name'], '-');
+        $data['username'] = Str::slug($data['first_name'].' '.$data['last_name'], '-');
         $existingUsernames = User::where('username', $data['username'])->first();
 
         if($existingUsernames !== null)

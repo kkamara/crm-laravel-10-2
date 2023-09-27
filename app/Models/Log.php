@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use Validator;
 
 class Log extends Model
@@ -83,7 +84,7 @@ class Log extends Model
     public static function createLog($data)
     {
         return self::create([
-            'slug' => strtolower(str_slug($data['title'], '-')),
+            'slug' => strtolower(Str::slug($data['title'], '-')),
             'client_id' => $data['client_id'],
             'user_created' => $data['user_created'],
             'title' => $data['title'],
