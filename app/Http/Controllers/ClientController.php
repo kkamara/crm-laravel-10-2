@@ -210,7 +210,7 @@ class ClientController extends Controller
         }
 
         $raw = Client::getUpdateData($request);
-        $errors = Client::getUpdateErrors($raw);
+        $errors = Client::getUpdateErrors($request, $raw);
 
         // handle errors
         if(!$errors->isEmpty())

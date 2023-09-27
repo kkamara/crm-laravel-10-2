@@ -362,10 +362,11 @@ class Client extends Model
     /**
      *  Get update errors.
      *
+     *  @param \Illuminate\Http\Request $request
      *  @param array $data
      *  @return array
      */
-    public static function getUpdateErrors($data)
+    public static function getUpdateErrors($request, $data)
     {
         $errors = new MessageBag;
 
@@ -381,9 +382,9 @@ class Client extends Model
             'contact_number' => 'max:191',
         ]);
 
-        if(Input::hasFile('image'))
+        if($request->hasFile('image'))
         {
-            $file = Input::file('image');
+            $file = $request->file('image');
             $mimetype = $file->getClientMimeType();
 
             switch($mimetype)
